@@ -10,7 +10,7 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --g:#C09B4A;--g2:#D4AE5C;--g3:#EDD080;--g4:#f5d98a;
+  --g:#c4bb48;--g2:#D4AE5C;--g3:#EDD080;--g4:#f5d98a;
   --glow:rgba(192,155,74,.15);--gdim:rgba(192,155,74,.1);
   --d:#05050A;--d2:#0B0B12;--d3:#111119;--d4:#17171F;--d5:#1E1E27;
   --c:#F5EEE3;--c2:#E8DECE;--c3:#D5C9B8;
@@ -23,12 +23,12 @@ html{scroll-behavior:smooth;font-size:16px}
 body{font-family:var(--fb);background:var(--d);color:var(--c);overflow-x:hidden;line-height:1.65;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
 
-/* ─── PAGES ─── */
+/* PAGES */
 .page{display:none;min-height:100vh}
 .page.active{display:block;animation:pgIn .6s var(--e2)}
 @keyframes pgIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-/* ─── NAV ─── */
+/* NAV */
 #nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.6rem 4rem;display:flex;align-items:center;justify-content:space-between;transition:all .4s var(--e1)}
 #nav.stuck{padding:.9rem 4rem;background:rgba(5,5,10,.97);backdrop-filter:blur(28px);border-bottom:1px solid var(--bdr)}
 .logo{font-family:var(--ff);font-size:1.5rem;font-weight:500;color:var(--c);cursor:pointer;letter-spacing:.05em;display:flex;align-items:baseline;gap:.18rem;user-select:none}
@@ -48,7 +48,7 @@ img{display:block;max-width:100%}
 .ham span:first-child{width:24px}.ham span:nth-child(2){width:15px}.ham span:last-child{width:19px}
 .ham:hover span{width:24px;background:var(--g)}
 
-/* ─── HERO ─── */
+/* HERO */
 .hero{height:100vh;min-height:700px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;text-align:center}
 .hero-media{position:absolute;inset:0}
 .hero-media img{width:100%;height:100%;object-fit:cover;transform:scale(1.1);transition:transform 16s ease;filter:brightness(.75) saturate(.9)}
@@ -57,7 +57,10 @@ img{display:block;max-width:100%}
 .hero-over{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,5,10,.28) 0%,rgba(5,5,10,.38) 50%,rgba(5,5,10,.9) 85%,var(--d) 100%)}
 .hero-vign{position:absolute;inset:0;background:radial-gradient(ellipse 100% 90% at 50% 45%,transparent 20%,rgba(5,5,10,.55) 70%,rgba(5,5,10,.95) 100%)}
 .hero-glow{position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(192,155,74,.06) 0%,transparent 65%);pointer-events:none}
-.hc{position:relative;z-index:2;max-width:940px;padding:0 2rem;display:flex;flex-direction:column;align-items:center}
+
+/* ✅ FIX: Added padding-bottom:10rem so buttons clear the stats bar */
+.hc{position:relative;z-index:2;max-width:940px;padding:0 2rem 10rem;display:flex;flex-direction:column;align-items:center}
+
 .h-eyebrow{display:flex;align-items:center;gap:1.4rem;margin-bottom:2.6rem;opacity:0;animation:fadeUp .9s .1s var(--e2) forwards}
 .h-line{width:50px;height:1px}
 .h-line.l{background:linear-gradient(to right,transparent,var(--g))}
@@ -91,7 +94,7 @@ img{display:block;max-width:100%}
 .hs:hover .hs-bar{transform:scaleX(1)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
 
-/* ─── PILLARS ─── */
+/* PILLARS */
 .pillars{display:grid;grid-template-columns:repeat(4,1fr);background:var(--d2);border-top:1px solid var(--bdr)}
 .pillar{padding:3.8rem 3rem;border-right:1px solid var(--bdr);position:relative;overflow:hidden;transition:background .3s}
 .pillar:last-child{border-right:none}
@@ -103,7 +106,7 @@ img{display:block;max-width:100%}
 .pillar h3{font-family:var(--ff);font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:.9rem}
 .pillar p{font-size:.72rem;line-height:2;color:var(--s);font-weight:300}
 
-/* ─── SECTION ─── */
+/* SECTION */
 .sec{padding:8rem 4rem}
 .eyebrow{display:inline-flex;align-items:center;gap:.9rem;font-size:.54rem;letter-spacing:.34em;text-transform:uppercase;color:var(--g);font-weight:500;margin-bottom:1.6rem}
 .eyebrow::before{content:'';width:30px;height:1px;background:var(--g)}
@@ -111,7 +114,7 @@ img{display:block;max-width:100%}
 .h2 em{font-style:italic;color:var(--g);font-weight:400}
 .body-lg{font-size:.85rem;line-height:2.15;color:rgba(245,238,227,.5);font-weight:300}
 
-/* ─── SPLIT ─── */
+/* SPLIT */
 .split{display:grid;grid-template-columns:1fr 1fr}
 .split-img{position:relative;overflow:hidden;min-height:640px;background:var(--d2)}
 .split-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.9);transition:transform 9s ease,filter .6s}
@@ -126,11 +129,10 @@ img{display:block;max-width:100%}
 .check-list li{display:flex;align-items:center;gap:1.1rem;font-size:.77rem;color:var(--c2);font-weight:400}
 .check-list li::before{content:'';flex-shrink:0;width:24px;height:1px;background:var(--g)}
 
-/* ─── IMAGE CARD (generic media wrapper) ─── */
+/* IMG WRAP */
 .img-wrap{position:relative;overflow:hidden;background:var(--d3)}
 .img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--e1),filter .6s;filter:brightness(.88)}
 .img-wrap:hover img{transform:scale(1.05);filter:brightness(.72)}
-/* Fallback class added by JS when image fails */
 .img-fb-court{background:linear-gradient(145deg,#0d0d1a,#191426,#0a0a10)}
 .img-fb-office{background:linear-gradient(145deg,#0e1018,#131820,#0b0e14)}
 .img-fb-library{background:linear-gradient(145deg,#120e0a,#1a1510,#0e0b08)}
@@ -139,7 +141,7 @@ img{display:block;max-width:100%}
 .img-fb-nyc{background:linear-gradient(145deg,#080c18,#0d1222,#060910)}
 .img-fb-meeting{background:linear-gradient(145deg,#0a0e14,#12161e,#080b10)}
 
-/* ─── PRACTICE GRID ─── */
+/* PRACTICE GRID */
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bdr)}
 .pcard{background:var(--d2);padding:3.4rem 3rem;position:relative;overflow:hidden;cursor:pointer;transition:background .3s}
 .pcard::before{content:'';position:absolute;inset:0;opacity:0;background:radial-gradient(ellipse at top left,rgba(192,155,74,.06),transparent 60%);transition:opacity .4s}
@@ -156,7 +158,7 @@ img{display:block;max-width:100%}
 .pcard-arr{position:absolute;top:3.4rem;right:3rem;font-size:1rem;color:rgba(114,114,138,.3);transition:all .35s}
 .pcard:hover .pcard-arr{color:var(--g);transform:translate(4px,-4px)}
 
-/* ─── ATTORNEY GRID ─── */
+/* ATTORNEY GRID */
 .agrid{display:grid;grid-template-columns:repeat(4,1fr)}
 .acard{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:.68;background:var(--d3)}
 .acard img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.88) saturate(.82);transition:all .8s var(--e2)}
@@ -171,7 +173,7 @@ img{display:block;max-width:100%}
 .acard-cta{display:inline-flex;align-items:center;gap:.4rem;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--g);background:none;border:none;font-family:var(--fb);cursor:pointer;padding:0;margin-top:.9rem;opacity:0;transform:translateY(10px);transition:all .45s .12s var(--e2)}
 .acard:hover .acard-cta{opacity:1;transform:translateY(0)}
 
-/* ─── MOSAIC ─── */
+/* MOSAIC */
 .mosaic{display:grid;grid-template-columns:5fr 3fr 3fr;grid-template-rows:300px 300px;gap:3px}
 .mos{overflow:hidden;position:relative;background:var(--d3)}
 .mos:first-child{grid-row:1/3}
@@ -179,7 +181,7 @@ img{display:block;max-width:100%}
 .mos:hover img{transform:scale(1.08);filter:brightness(.65)}
 .mos-tag{position:absolute;bottom:1.5rem;left:1.5rem;font-size:.52rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(245,238,227,.92);padding:.38rem 1.1rem;background:rgba(5,5,10,.7);backdrop-filter:blur(12px);border-left:2px solid var(--g)}
 
-/* ─── TESTIMONIAL ─── */
+/* TESTIMONIAL */
 .tslider{background:var(--d3);padding:8rem 4rem;text-align:center;border-top:1px solid var(--bdr)}
 .tslider-inner{max-width:840px;margin:0 auto}
 .qmark{font-family:var(--ff);font-size:11rem;line-height:.3;color:var(--g);opacity:.18;user-select:none;margin-bottom:2rem}
@@ -193,7 +195,7 @@ img{display:block;max-width:100%}
 .t-logo{font-family:var(--ff);font-size:.9rem;color:var(--s);opacity:.3;font-style:italic;transition:all .35s;cursor:default;letter-spacing:.03em}
 .t-logo:hover{opacity:.7;color:var(--g2)}
 
-/* ─── TESTI CARDS ─── */
+/* TESTI CARDS */
 .tcards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
 .tcard{background:var(--d3);border:1px solid var(--bdr);padding:3.2rem;position:relative;overflow:hidden;transition:all .35s}
 .tcard::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--g),transparent);transform:scaleX(0);transition:transform .5s var(--e2)}
@@ -204,7 +206,7 @@ img{display:block;max-width:100%}
 .tcard-name{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--g);font-weight:500}
 .tcard-co{font-size:.56rem;color:var(--s);margin-top:.3rem}
 
-/* ─── CONTACT ─── */
+/* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr}
 .c-left{position:relative;min-height:780px;overflow:hidden;background:var(--d3)}
 .c-left img{width:100%;height:100%;object-fit:cover;filter:brightness(.82);position:absolute;inset:0}
@@ -214,23 +216,41 @@ img{display:block;max-width:100%}
 .cinfo-row{padding:1.7rem 0;border-top:1px solid var(--bdr)}
 .cinfo-lbl{font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:var(--g);font-weight:500;display:block;margin-bottom:.6rem}
 .cinfo-val{font-size:.81rem;color:rgba(245,238,227,.7);font-weight:300;line-height:1.8}
-.c-right{background:var(--c2);padding:6rem 5.5rem;display:flex;flex-direction:column;justify-content:center}
-.c-right h3{font-family:var(--ff);font-size:2.5rem;font-weight:700;color:var(--d);margin-bottom:.5rem;line-height:1.1}
-.c-right .sub{font-size:.75rem;color:#8a8070;margin-bottom:3.2rem;font-weight:300}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin-bottom:1.6rem}
-.fg{display:flex;flex-direction:column}
+
+/* CONTACT FORM */
+.c-right{background:#F0E8D8;padding:5rem 5rem;display:flex;flex-direction:column;justify-content:center;min-height:780px}
+.c-right h3{font-family:var(--ff);font-size:2.6rem;font-weight:700;color:#1a1610;margin-bottom:.4rem;line-height:1.1}
+.c-right .sub{font-size:.76rem;color:#7a6e5e;margin-bottom:2.8rem;font-weight:300;letter-spacing:.02em}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-bottom:0}
+.frow+.frow{margin-top:1.4rem}
+.fg{display:flex;flex-direction:column;margin-bottom:0}
 .fg.full{grid-column:1/-1}
-.fg label{font-size:.52rem;letter-spacing:.26em;text-transform:uppercase;color:#8a7d6d;font-weight:500;margin-bottom:.7rem}
-.fg input,.fg select,.fg textarea{background:transparent;border:none;border-bottom:1.5px solid #cbbfa8;padding:.9rem 0;font-size:.82rem;color:var(--d);font-family:var(--fb);font-weight:300;outline:none;transition:border-color .3s;resize:none;-webkit-appearance:none}
-.fg input:focus,.fg textarea:focus,.fg select:focus{border-bottom-color:var(--g)}
-.fg input::placeholder,.fg textarea::placeholder{color:#c4bbb0}
-.f-submit{margin-top:2.8rem;width:100%;background:var(--d);color:var(--c);border:none;padding:1.25rem;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;font-family:var(--fb);font-weight:500;cursor:pointer;position:relative;overflow:hidden;transition:color .35s}
+.fg label{font-size:.5rem;letter-spacing:.3em;text-transform:uppercase;color:#9a8c78;font-weight:600;margin-bottom:.55rem;display:block}
+.fg input,.fg select,.fg textarea{background:#fff;border:1.5px solid #ddd0bb;border-radius:2px;padding:.85rem 1rem;font-size:.83rem;color:#1a1610;font-family:var(--fb);font-weight:400;outline:none;transition:border-color .25s,box-shadow .25s;resize:vertical;-webkit-appearance:none;appearance:none;width:100%;line-height:1.5}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:#9A7228;box-shadow:0 0 0 3px rgba(154,114,40,.1)}
+.fg input::placeholder,.fg textarea::placeholder{color:#bfb5a5;font-size:.8rem}
+.fg select{cursor:pointer;color:#1a1610;background:#fff}
+.fg select.placeholder{color:#bfb5a5}
+.fg select option{color:#1a1610;background:#fff}
+.form-row-group{display:flex;flex-direction:column;gap:1.4rem;margin-top:1.4rem}
+.f-submit{margin-top:2.2rem;width:100%;background:#1a1610;color:#F0E8D8;border:none;padding:1.2rem;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;font-family:var(--fb);font-weight:600;cursor:pointer;position:relative;overflow:hidden;transition:color .35s}
 .f-submit span{position:relative;z-index:1}
-.f-submit::before{content:'';position:absolute;inset:0;background:var(--g);transform:scaleX(0);transform-origin:left;transition:transform .42s var(--e3)}
-.f-submit:hover{color:var(--d)}
+.f-submit::before{content:'';position:absolute;inset:0;background:#9A7228;transform:scaleX(0);transform-origin:left;transition:transform .42s var(--e3)}
+.f-submit:hover{color:#fff}
 .f-submit:hover::before{transform:scaleX(1)}
 
-/* ─── PAGE HERO ─── */
+/* SUCCESS STATE */
+.form-success{display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5rem 2rem;gap:1.8rem;flex:1}
+.form-success.show{display:flex}
+.form-body.hidden{display:none}
+.success-icon{width:72px;height:72px;border-radius:50%;background:rgba(154,114,40,.1);border:1.5px solid rgba(154,114,40,.4);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.success-icon svg{width:30px;height:30px;stroke:#9A7228;fill:none;stroke-width:1.8}
+.success-title{font-family:var(--ff);font-size:2.2rem;font-weight:700;color:#1a1610;line-height:1.1}
+.success-msg{font-size:.8rem;color:#7a6e5e;line-height:2.1;font-weight:300;max-width:300px}
+.success-back{margin-top:.5rem;background:none;border:1.5px solid #c4b89a;color:#7a6e5e;padding:.85rem 2.2rem;font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;font-family:var(--fb);font-weight:500;cursor:pointer;transition:all .3s;border-radius:1px}
+.success-back:hover{border-color:#9A7228;color:#9A7228;background:rgba(154,114,40,.05)}
+
+/* PAGE HERO */
 .phero{min-height:56vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;padding:9.5rem 4rem 5.5rem}
 .phero-media{position:absolute;inset:0;background:var(--d3)}
 .phero-media img{width:100%;height:100%;object-fit:cover;filter:brightness(.72)}
@@ -244,7 +264,7 @@ img{display:block;max-width:100%}
 .bc-btn{color:rgba(192,155,74,.6);cursor:pointer;background:none;border:none;font-family:var(--fb);font-size:.54rem;letter-spacing:.22em;text-transform:uppercase;transition:color .25s;padding:0}
 .bc-btn:hover{color:var(--g)}
 
-/* ─── CTA BAND ─── */
+/* CTA BAND */
 .ctaband{padding:5.5rem 4rem;background:linear-gradient(130deg,#9A7228 0%,var(--g) 45%,var(--g3) 100%);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2rem;position:relative;overflow:hidden}
 .ctaband::before{content:'';position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.055);right:-100px;top:-150px}
 .ctaband::after{content:'';position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.04);right:220px;bottom:-90px}
@@ -252,7 +272,7 @@ img{display:block;max-width:100%}
 .ctaband h2{font-family:var(--ff);font-size:clamp(1.8rem,3.2vw,2.9rem);font-weight:700;color:var(--d);line-height:1.1}
 .ctaband p{font-size:.77rem;color:rgba(5,5,10,.5);margin-top:.55rem;font-weight:300}
 
-/* ─── TIMELINE ─── */
+/* TIMELINE */
 .tl-item{display:grid;grid-template-columns:130px 1fr;gap:3rem;padding:3rem 0;border-top:1px solid var(--bdr);align-items:start;transition:border-color .3s}
 .tl-item:hover{border-color:var(--bdr3)}
 .tl-year{font-family:var(--ff);font-size:2.1rem;font-weight:400;color:rgba(192,155,74,.3);line-height:1;transition:color .3s}
@@ -260,7 +280,7 @@ img{display:block;max-width:100%}
 .tl-title{font-family:var(--ff);font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:.7rem}
 .tl-desc{font-size:.74rem;line-height:2;color:var(--s);font-weight:300}
 
-/* ─── FOOTER ─── */
+/* FOOTER */
 footer{background:var(--d2);border-top:1px solid var(--bdr);padding:5.5rem 4rem;display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:3rem}
 .f-brand p{font-size:.7rem;line-height:2;color:var(--s);font-weight:300;max-width:225px;margin-top:1rem}
 .f-col h4{font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:var(--g);font-weight:500;margin-bottom:1.6rem}
@@ -272,16 +292,16 @@ footer{background:var(--d2);border-top:1px solid var(--bdr);padding:5.5rem 4rem;
 .fbar-links a{font-size:.56rem;color:rgba(114,114,138,.42);cursor:pointer;transition:color .25s;text-decoration:none}
 .fbar-links a:hover{color:var(--g)}
 
-/* ─── TOAST ─── */
+/* TOAST */
 .toast{position:fixed;bottom:2.5rem;right:2.5rem;background:var(--g);color:var(--d);padding:1.1rem 2.4rem;font-size:.68rem;font-weight:600;letter-spacing:.14em;z-index:9999;opacity:0;transform:translateY(32px) scale(.95);transition:all .45s var(--e2);pointer-events:none}
 .toast.show{opacity:1;transform:translateY(0) scale(1)}
 
-/* ─── REVEAL ─── */
+/* REVEAL */
 .reveal{opacity:0;transform:translateY(32px);transition:opacity .8s var(--e2),transform .8s var(--e2)}
 .reveal.in{opacity:1;transform:translateY(0)}
 .d1{transition-delay:.09s}.d2{transition-delay:.18s}.d3{transition-delay:.27s}.d4{transition-delay:.36s}
 
-/* ─── RESPONSIVE ─── */
+/* RESPONSIVE */
 @media(max-width:1100px){
   #nav,#nav.stuck{padding:1rem 2.5rem}
   .sec{padding:6rem 2.5rem}
@@ -313,12 +333,16 @@ footer{background:var(--d2);border-top:1px solid var(--bdr);padding:5.5rem 4rem;
   .pillars{grid-template-columns:1fr 1fr}
   .mosaic{grid-template-columns:1fr 1fr;grid-template-rows:auto}
   .mos:first-child{grid-row:auto}
-  .c-right,.c-left-c{padding:4rem 2rem}
+  .c-right,.c-left-c{padding:3rem 1.8rem}
+  .c-right .frow{grid-template-columns:1fr}
   footer{grid-template-columns:1fr;padding:3.5rem 1.8rem}
   .fbar{flex-direction:column;gap:1rem;padding:1.5rem 1.8rem;text-align:center}
   .ctaband{padding:4rem 1.8rem}
   .tcards{grid-template-columns:1fr}
   .t-logos{gap:2rem}
+  .frow{grid-template-columns:1fr}
+  /* On mobile stats bar is relative so no overlap — reset bottom padding */
+  .hc{padding-bottom:4rem}
 }
 @media(max-width:480px){
   .agrid,.pillars{grid-template-columns:1fr}
@@ -345,17 +369,12 @@ footer{background:var(--d2);border-top:1px solid var(--bdr);padding:5.5rem 4rem;
 </nav>
 
 
-<!-- ══════════════════════════════════
-     HOME
-══════════════════════════════════ -->
+<!-- ══ HOME ══ -->
 <div id="p-home" class="page active">
 
   <section class="hero">
     <div class="hero-media" id="hm-hero">
-      <!-- US Supreme Court Building — grand white columns, justice architecture -->
-      <img id="img-hero"
-        src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=90"
-        alt="US Supreme Court">
+      <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=90" alt="US Supreme Court">
     </div>
     <div class="hero-over"></div>
     <div class="hero-vign"></div>
@@ -387,9 +406,7 @@ footer{background:var(--d2);border-top:1px solid var(--bdr);padding:5.5rem 4rem;
 
   <div class="split">
     <div class="split-img img-wrap reveal" style="min-height:640px">
-      <!-- Sleek dark-panelled executive law office, mahogany desk, city view -->
-      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&h=1100&q=88"
-           data-fb="img-fb-office" alt="Our offices">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&h=1100&q=88" data-fb="img-fb-office" alt="Our offices">
       <div class="split-img-ov" style="background:linear-gradient(135deg,transparent 35%,rgba(5,5,10,.55) 100%)"></div>
       <div class="split-badge"><div class="sb-n">37</div><div class="sb-l">Years of Excellence</div></div>
     </div>
@@ -432,36 +449,25 @@ footer{background:var(--d2);border-top:1px solid var(--bdr);padding:5.5rem 4rem;
     </div>
   </div>
 
-  <!-- MOSAIC -->
   <div class="mosaic">
     <div class="mos img-wrap">
-      <!-- Large: Premium law office interior — glass, marble, city skyline backdrop -->
-      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=88"
-           data-fb="img-fb-office" alt="Our offices">
+      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=88" data-fb="img-fb-office" alt="Our offices">
       <span class="mos-tag">Our Offices</span>
     </div>
     <div class="mos img-wrap">
-      <!-- Gavel on legal documents / scales of justice on desk -->
-      <img src="https://images.unsplash.com/photo-1589578527966-fdac0f44566c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=88"
-           data-fb="img-fb-legal" alt="In Chambers">
+      <img src="https://images.unsplash.com/photo-1589578527966-fdac0f44566c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=88" data-fb="img-fb-legal" alt="In Chambers">
       <span class="mos-tag">In Chambers</span>
     </div>
     <div class="mos img-wrap">
-      <!-- Business professionals meeting around a table, reviewing documents -->
-      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=88"
-           data-fb="img-fb-meeting" alt="Client Meetings">
+      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=88" data-fb="img-fb-meeting" alt="Client Meetings">
       <span class="mos-tag">Client Meetings</span>
     </div>
     <div class="mos img-wrap">
-      <!-- Diverse professional legal team in a modern conference room -->
-      <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=88"
-           data-fb="img-fb-meeting" alt="Our Team">
+      <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=88" data-fb="img-fb-meeting" alt="Our Team">
       <span class="mos-tag">Our Team</span>
     </div>
     <div class="mos img-wrap">
-      <!-- Law books stacked on desk, pen and legal documents, research -->
-      <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=88"
-           data-fb="img-fb-legal" alt="Legal Research">
+      <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=88" data-fb="img-fb-legal" alt="Legal Research">
       <span class="mos-tag">Legal Research</span>
     </div>
   </div>
@@ -488,15 +494,11 @@ footer{background:var(--d2);border-top:1px solid var(--bdr);padding:5.5rem 4rem;
 </div>
 
 
-<!-- ══════════════════════════════════
-     ABOUT
-══════════════════════════════════ -->
+<!-- ══ ABOUT ══ -->
 <div id="p-about" class="page">
   <div class="phero">
     <div class="phero-media img-wrap">
-      <!-- Manhattan Financial District — glass towers, dawn light, power and prestige -->
-      <img src="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=88"
-           data-fb="img-fb-nyc" alt="Manhattan skyline">
+      <img src="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=88" data-fb="img-fb-nyc" alt="Manhattan skyline">
     </div>
     <div class="phero-over"></div><div class="phero-bot"></div>
     <div class="phero-c">
@@ -516,9 +518,7 @@ footer{background:var(--d2);border-top:1px solid var(--bdr);padding:5.5rem 4rem;
       <button class="btn btn-gold" onclick="go('attorneys')"><span>Meet the Team &nbsp;→</span></button>
     </div>
     <div class="split-img img-wrap reveal" style="min-height:640px">
-      <!-- Beautiful floor-to-ceiling law library — leather-bound volumes, warm amber light -->
-      <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&h=1100&q=88"
-           data-fb="img-fb-library" alt="Law library">
+      <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&h=1100&q=88" data-fb="img-fb-library" alt="Law library">
       <div class="split-img-ov" style="background:linear-gradient(to left,transparent 35%,rgba(5,5,10,.6) 100%)"></div>
       <div class="split-badge"><div class="sb-n">60<sup style="font-size:1rem;color:var(--g)">+</sup></div><div class="sb-l">Expert Attorneys</div></div>
     </div>
@@ -557,15 +557,11 @@ footer{background:var(--d2);border-top:1px solid var(--bdr);padding:5.5rem 4rem;
 </div>
 
 
-<!-- ══════════════════════════════════
-     PRACTICE
-══════════════════════════════════ -->
+<!-- ══ PRACTICE ══ -->
 <div id="p-practice" class="page">
   <div class="phero">
     <div class="phero-media img-wrap">
-      <!-- Brass scales of justice on a dark mahogany desk with law books -->
-      <img src="https://images.unsplash.com/photo-1589216532372-1c2a367900d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=88"
-           data-fb="img-fb-legal" alt="Scales of justice">
+      <img src="https://images.unsplash.com/photo-1589216532372-1c2a367900d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=88" data-fb="img-fb-legal" alt="Scales of justice">
     </div>
     <div class="phero-over"></div><div class="phero-bot"></div>
     <div class="phero-c">
@@ -598,15 +594,11 @@ footer{background:var(--d2);border-top:1px solid var(--bdr);padding:5.5rem 4rem;
 </div>
 
 
-<!-- ══════════════════════════════════
-     ATTORNEYS
-══════════════════════════════════ -->
+<!-- ══ ATTORNEYS ══ -->
 <div id="p-attorneys" class="page">
   <div class="phero">
     <div class="phero-media img-wrap">
-      <!-- Dark executive boardroom with leather chairs — serious, prestigious -->
-     <img src="https://images.unsplash.com/photo-1497366754035-f200586c52fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=88"
-           data-fb="img-fb-office" alt="Executive boardroom">
+      <img src="https://images.unsplash.com/photo-1497366754035-f200586c52fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=88" data-fb="img-fb-office" alt="Executive boardroom">
     </div>
     <div class="phero-over"></div><div class="phero-bot"></div>
     <div class="phero-c">
@@ -618,9 +610,7 @@ footer{background:var(--d2);border-top:1px solid var(--bdr);padding:5.5rem 4rem;
   <div class="sec" style="background:var(--d2);padding-top:5rem;padding-bottom:5rem">
     <div class="agrid">
       <div class="acard reveal">
-        <!-- Senior male partner: mature, silver-haired, authoritative suit -->
-      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d">
-             data-fb="img-fb-portrait" alt="William Harrington">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=880&q=88" data-fb="img-fb-portrait" alt="William Harrington">
         <div class="acard-grad"></div>
         <div class="acard-info">
           <div class="acard-name">William Harrington</div>
@@ -630,9 +620,7 @@ footer{background:var(--d2);border-top:1px solid var(--bdr);padding:5.5rem 4rem;
         </div>
       </div>
       <div class="acard reveal d1">
-        <!-- Senior female partner: professional Asian woman, confident -->
-        <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=880&q=88"
-             data-fb="img-fb-portrait" alt="Sarah Chen">
+        <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=880&q=88" data-fb="img-fb-portrait" alt="Sarah Chen">
         <div class="acard-grad"></div>
         <div class="acard-info">
           <div class="acard-name">Sarah Chen</div>
@@ -642,9 +630,7 @@ footer{background:var(--d2);border-top:1px solid var(--bdr);padding:5.5rem 4rem;
         </div>
       </div>
       <div class="acard reveal d2">
-        <!-- Male litigation partner: mid-40s, strong courtroom presence -->
-        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=880&q=88"
-             data-fb="img-fb-portrait" alt="Marcus Reid">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=880&q=88" data-fb="img-fb-portrait" alt="Marcus Reid">
         <div class="acard-grad"></div>
         <div class="acard-info">
           <div class="acard-name">Marcus Reid</div>
@@ -654,9 +640,7 @@ footer{background:var(--d2);border-top:1px solid var(--bdr);padding:5.5rem 4rem;
         </div>
       </div>
       <div class="acard reveal d3">
-        <!-- Female private client partner: warm professional, approachable -->
-        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=880&q=88"
-             data-fb="img-fb-portrait" alt="Elena Vasquez">
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=880&q=88" data-fb="img-fb-portrait" alt="Elena Vasquez">
         <div class="acard-grad"></div>
         <div class="acard-info">
           <div class="acard-name">Elena Vasquez</div>
@@ -681,15 +665,11 @@ footer{background:var(--d2);border-top:1px solid var(--bdr);padding:5.5rem 4rem;
 </div>
 
 
-<!-- ══════════════════════════════════
-     TESTIMONIALS
-══════════════════════════════════ -->
+<!-- ══ TESTIMONIALS ══ -->
 <div id="p-testimonials" class="page">
   <div class="phero">
     <div class="phero-media img-wrap">
-      <!-- Two executives shaking hands over a conference table — trust, resolution -->
-      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=88"
-           data-fb="img-fb-meeting" alt="Executive handshake">
+      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=88" data-fb="img-fb-meeting" alt="Executive handshake">
     </div>
     <div class="phero-over"></div><div class="phero-bot"></div>
     <div class="phero-c">
@@ -741,15 +721,11 @@ footer{background:var(--d2);border-top:1px solid var(--bdr);padding:5.5rem 4rem;
 </div>
 
 
-<!-- ══════════════════════════════════
-     CONTACT
-══════════════════════════════════ -->
+<!-- ══ CONTACT ══ -->
 <div id="p-contact" class="page">
   <div class="phero" style="min-height:44vh">
     <div class="phero-media img-wrap">
-      <!-- One Liberty Plaza glass tower — Financial District, NYC, night -->
-      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=88"
-           data-fb="img-fb-nyc" alt="One Liberty Plaza">
+      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=88" data-fb="img-fb-nyc" alt="One Liberty Plaza">
     </div>
     <div class="phero-over"></div><div class="phero-bot"></div>
     <div class="phero-c">
@@ -761,9 +737,7 @@ footer{background:var(--d2);border-top:1px solid var(--bdr);padding:5.5rem 4rem;
 
   <div class="contact-grid">
     <div class="c-left img-wrap">
-      <!-- High-rise corner law office, floor-to-ceiling glass, city view, dark interior -->
-      <img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&h=1200&q=88"
-           data-fb="img-fb-office" alt="Harrington offices">
+      <img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&h=1200&q=88" data-fb="img-fb-office" alt="Harrington offices">
       <div class="c-left-ov"></div>
       <div class="c-left-c">
         <div>
@@ -779,32 +753,66 @@ footer{background:var(--d2);border-top:1px solid var(--bdr);padding:5.5rem 4rem;
         </div>
       </div>
     </div>
+
     <div class="c-right">
       <h3>Request a Consultation</h3>
       <p class="sub">Complete the form — we respond within one business day.</p>
-      <div class="frow">
-        <div class="fg"><label>First Name</label><input type="text" placeholder="William"></div>
-        <div class="fg"><label>Last Name</label><input type="text" placeholder="Harrington"></div>
-      </div>
-      <div class="frow">
-        <div class="fg"><label>Email Address</label><input type="email" placeholder="you@example.com"></div>
-        <div class="fg"><label>Phone Number</label><input type="tel" placeholder="+1 (212) 000-0000"></div>
-      </div>
-      <div class="frow">
-        <div class="fg full"><label>Practice Area</label>
-          <select>
-            <option value="" disabled selected>Select area of inquiry</option>
-            <option>Corporate Law</option><option>Litigation</option><option>Real Estate</option>
-            <option>Private Client</option><option>Finance &amp; Banking</option><option>International</option>
-          </select>
+
+      <div class="form-body" id="formBody">
+        <div class="frow">
+          <div class="fg">
+            <label for="f-fname">First Name</label>
+            <input type="text" id="f-fname" placeholder="William">
+          </div>
+          <div class="fg">
+            <label for="f-lname">Last Name</label>
+            <input type="text" id="f-lname" placeholder="Harrington">
+          </div>
         </div>
+        <div class="frow" style="margin-top:1.4rem">
+          <div class="fg">
+            <label for="f-email">Email Address</label>
+            <input type="email" id="f-email" placeholder="you@example.com">
+          </div>
+          <div class="fg">
+            <label for="f-phone">Phone Number</label>
+            <input type="tel" id="f-phone" placeholder="+1 (212) 000-0000">
+          </div>
+        </div>
+        <div style="margin-top:1.4rem">
+          <div class="fg full">
+            <label for="f-area">Practice Area</label>
+            <select id="f-area" class="placeholder" onchange="this.classList.remove('placeholder')">
+              <option value="" disabled selected>Select area of inquiry</option>
+              <option>Corporate Law</option>
+              <option>Litigation</option>
+              <option>Real Estate</option>
+              <option>Private Client</option>
+              <option>Finance &amp; Banking</option>
+              <option>International</option>
+            </select>
+          </div>
+        </div>
+        <div style="margin-top:1.4rem">
+          <div class="fg full">
+            <label for="f-matter">Matter Description</label>
+            <textarea id="f-matter" rows="5" placeholder="Briefly describe your legal matter…"></textarea>
+          </div>
+        </div>
+        <button class="f-submit" onclick="submitForm()"><span>Submit Inquiry &nbsp;→</span></button>
       </div>
-      <div class="frow">
-        <div class="fg full"><label>Matter Description</label><textarea rows="4" placeholder="Briefly describe your legal matter…"></textarea></div>
+
+      <div class="form-success" id="formSuccess">
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="success-title">Thank you.</div>
+        <p class="success-msg">Your inquiry has been received. A member of our team will be in touch within one business day.</p>
+        <button class="success-back" onclick="resetForm()">Submit another inquiry</button>
       </div>
-      <button class="f-submit" onclick="submitForm()"><span>Submit Inquiry &nbsp;→</span></button>
     </div>
   </div>
+
   <footer>
     <div class="f-brand"><div class="logo" onclick="go('home')"><span class="logo-em">H</span>&thinsp;&amp;&thinsp;Associates</div><p>Elite legal counsel since 1987.</p></div>
     <div class="f-col"><h4>Navigate</h4><a onclick="go('home')">Home</a><a onclick="go('about')">About</a><a onclick="go('practice')">Practice</a><a onclick="go('attorneys')">Attorneys</a></div>
@@ -817,8 +825,8 @@ footer{background:var(--d2);border-top:1px solid var(--bdr);padding:5.5rem 4rem;
 <div class="toast" id="toast">✓ &nbsp;Message received — we'll be in touch shortly.</div>
 
 <script>
-/* ── Navigation ── */
 const PAGES=['home','about','practice','attorneys','testimonials','contact'];
+
 function go(id){
   PAGES.forEach(p=>{const e=document.getElementById('p-'+p);if(e)e.classList.remove('active')});
   const el=document.getElementById('p-'+id);
@@ -827,16 +835,19 @@ function go(id){
   document.getElementById('navlinks').classList.remove('open');
   setTimeout(bindReveal,80);
 }
-function toggleNav(){document.getElementById('navlinks').classList.toggle('open')}
-window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('stuck',scrollY>50),{passive:true});
 
-/* ── Image fallbacks ── */
+function toggleNav(){document.getElementById('navlinks').classList.toggle('open')}
+
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('stuck',scrollY>50);
+},{passive:true});
+
+/* Image fallbacks */
 document.querySelectorAll('img[data-fb]').forEach(img=>{
   img.addEventListener('error',function(){
     const fb=this.dataset.fb;
     this.style.display='none';
     this.parentElement.classList.add(fb);
-    /* Inject a subtle SVG pattern overlay for visual richness */
     if(!this.parentElement.querySelector('.svg-pattern')){
       const pat=document.createElement('div');
       pat.className='svg-pattern';
@@ -846,7 +857,7 @@ document.querySelectorAll('img[data-fb]').forEach(img=>{
   },{once:true});
 });
 
-/* ── Testimonial slider ── */
+/* Testimonial slider */
 const TS=[
   {t:"Harrington &amp; Associates navigated a profoundly complex cross-border acquisition with strategic clarity I have simply never encountered elsewhere. Their counsel did not merely advise — they transformed the entire outcome.",a:"Jonathan Mercer",c:"Chief Executive, Meridian Capital Group"},
   {t:"In thirty years of business, none have matched the combination of intellectual rigour, tactical brilliance, and personal dedication that Harrington brings to every matter. They are simply exceptional.",a:"Diana Ashworth",c:"Managing Director, Ashworth Family Office"},
@@ -869,18 +880,38 @@ function showT(i){
 }
 tTimer=setInterval(()=>showT((ti+1)%4),7000);
 
-/* ── Scroll reveal ── */
+/* Scroll reveal */
 const ro=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}});
 },{threshold:.08});
 function bindReveal(){document.querySelectorAll('.active .reveal:not(.in)').forEach(el=>ro.observe(el))}
 setTimeout(bindReveal,160);
 
-/* ── Form submit ── */
+/* Form submit */
 function submitForm(){
-  const t=document.getElementById('toast');
-  t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),4000);
+  const fname=document.getElementById('f-fname').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  if(!fname||!email){
+    const t=document.getElementById('toast');
+    t.textContent='⚠  Please enter your name and email.';
+    t.style.background='#444';t.style.color='#fff';
+    t.classList.add('show');
+    setTimeout(()=>{t.classList.remove('show');setTimeout(()=>{t.textContent='✓  Message received — we\'ll be in touch shortly.';t.style.background='';t.style.color='';},500)},3000);
+    return;
+  }
+  document.getElementById('formBody').classList.add('hidden');
+  document.getElementById('formSuccess').classList.add('show');
+  window.scrollTo({top:document.getElementById('p-contact').querySelector('.c-right').offsetTop-100,behavior:'smooth'});
+}
+
+function resetForm(){
+  document.getElementById('formBody').classList.remove('hidden');
+  document.getElementById('formSuccess').classList.remove('show');
+  ['f-fname','f-lname','f-email','f-phone','f-matter'].forEach(id=>{
+    const el=document.getElementById(id);if(el)el.value='';
+  });
+  const sel=document.getElementById('f-area');
+  if(sel)sel.selectedIndex=0;
 }
 </script>
 </body>
